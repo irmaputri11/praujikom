@@ -35,6 +35,10 @@ class frontend extends Controller
     {
         return view('contact');
     }
+    public function cekout()
+    {
+        return view('cekout');
+    }
 
     public function card()
     {

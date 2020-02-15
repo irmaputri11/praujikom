@@ -244,8 +244,7 @@ The above copyright notice and this permission notice shall be included in all c
                                     </div>
                                     <div class="form-group">
                                         <label for="">deskripsi</label>
-                                        <input class="form-control" type="text"
-                                        name="deskripsi" id="" required>
+                                        <textarea name="deskripsi" id="ck" cols="30" rows="10"></textarea>
                                         
                                     </div>
                                     <div class="form-group">
@@ -294,7 +293,7 @@ The above copyright notice and this permission notice shall be included in all c
                         <td>{{$data->nama_produk}}</td>
                         <td>{{$data->stok}}</td>
                         <td>{{$data->harga}}</td>
-                        <td>{{$data->deskripsi}}</td>
+                        <td>{!!$data->deskripsi!!}</td>
                         <td><img src="{{asset('assets/img/produk/' .$data->foto. '')}}"
                                 style="width:250px; height:250px;" alt="Foto"></td>
 
@@ -338,6 +337,10 @@ The above copyright notice and this permission notice shall be included in all c
       // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
       demo.initChartsPages();
     });
+  </script>
+  <script src="{{asset('ckeditor/ckeditor/ckeditor.js')}}"></script>
+  <script>
+    CKEDITOR.replace('ck')
   </script>
 </body>
 

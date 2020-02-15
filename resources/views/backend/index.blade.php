@@ -284,9 +284,7 @@ The above copyright notice and this permission notice shall be included in all c
                                     </div>
                                     <div class="form-group">
                                         <label for="">deskripsi</label>
-                                        <input class="form-control 
-                                        @error('deskripsi') is-invalid @enderror" type="text" 
-                                        name="deskripsi" id="" required>
+                                        <textarea name="deskripsi" class="form-control" id="ck" required cols="30" rows="10"></textarea>
                                         @error('deskripsi')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{$message}}</strong>
@@ -344,7 +342,7 @@ The above copyright notice and this permission notice shall be included in all c
                         <td>{{$data->satuan}}</td>
                         <td>{{$data->stok}}</td>
                         <td>{{$data->harga}}</td>
-                        <td>{{$data->deskripsi}}</td>
+                        <td>{!! $data->deskripsi !!}</td>
                         <td><img src="{{asset('assets/img/produk/' .$data->foto. '')}}"
                                 style="width:250px; height:250px;" alt="Foto"></td>
                                
@@ -381,14 +379,5 @@ The above copyright notice and this permission notice shall be included in all c
   <script src="{{asset('assets/backend/js/plugins/bootstrap-notify.js')}}"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{asset('assets/backend/js/paper-dashboard.min.js?v=2.0.0')}}" type="text/javascript"></script>
-  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-  <script src="{{asset('assets/backend/demo/demo.js')}}"></script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-      demo.initChartsPages();
-    });
-  </script>
 </body>
-
 </html>

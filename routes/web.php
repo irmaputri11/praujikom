@@ -21,9 +21,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::resource('', 'frontend');
 // Route::get('/shop', 'frontend@shop');
 Route::get('/shop','nyambungCotroller@shop');
-Route::get('/produk-detail', 'frontend@produk_detail');
+Route::get('/produk-detail', 'nyambungCotroller@produk_detail');
 Route::get('/admin', 'frontend@admin');
 Route::get('/contact', 'frontend@contact');
+Route::get('/cekout', 'nyambungCotroller@cekout');
 Route::get('/card', 'frontend@card');
 Route::get('/', 'nyambungCotroller@index');
 

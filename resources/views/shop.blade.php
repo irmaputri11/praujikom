@@ -174,13 +174,11 @@
                                                 <div class="dropdown-menu" aria-labelledby="karlDropdown">
                                                     <a class="dropdown-item" href="/">Home</a>
                                                     <a class="dropdown-item" href="shop">Shop</a>
-                                                    <a class="dropdown-item" href="product-details.html">Product Details</a>
-                                                    <a class="dropdown-item" href="cart.html">Cart</a>
-                                                    <a class="dropdown-item" href="checkout.html">Checkout</a>
+                                                    <a class="dropdown-item" href="produk-detail">Product Details</a>
+                                                    <a class="dropdown-item" href="cekout">Checkout</a>
                                                 </div>
                                             </li>
-                                            <li class="nav-item"><a class="nav-link" href="#">Dresses</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="#"><span class="karl-level">hot</span> Shoes</a></li>
+
                                             <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                                         </ul>
                                     </div>
@@ -243,8 +241,8 @@
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                             </div>
                                             <h5 class="price">Rp {{$data->harga}}<span>Rp 8000</span></h5>
-                                            <p>{{$data->deskripsi}}</p>
-                                            <a href="#">View Full Product Details</a>
+                                            <p>{!!$data->deskripsi!!}</p>
+                                            <a href="produk-detail">View Full Product Details</a>
                                         </div>
                                         <!-- Add to Cart Form -->
                                         <form class="cart" method="post">
@@ -255,15 +253,7 @@
 
                                                 <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
                                             </div>
-                                            <button type="submit" name="addtocart" value="5" class="cart-submit">Add to cart</button>
-                                            <!-- Wishlist -->
-                                            <div class="modal_pro_wishlist">
-                                                <a href="wishlist.html" target="_blank"><i class="ti-heart"></i></a>
-                                            </div>
-                                            <!-- Compare -->
-                                            <div class="modal_pro_compare">
-                                                <a href="compare.html" target="_blank"><i class="ti-stats-up"></i></a>
-                                            </div>
+                                            <button type="submit" name="addtocart" value="5" class="cart-submit">Checkout</button>
                                         </form>
 
                                         <div class="share_wf mt-30">
@@ -357,7 +347,7 @@
                                 <div class="product-description">
                                     <h4 class="product-price">Rp {{$data->harga}}</h4>
                                     <p>{{$data->nama_produk}}</p>
-                                    <a href="#" class="add-to-cart-btn">ADD TO CART</a>
+                                    <a href="cekout" class="add-to-cart-btn">Checkout</a>
                                 </div>
                             </div>
                             @endforeach

@@ -13,9 +13,20 @@ class nyambungCotroller extends Controller
         
     }
 
+    public function produk_detail (){
+        $produk = Produk::get();
+        return view ('produk-detail', compact('produk'));
+        
+    }
+
     public function shop (){
         $produk = Produk::get();
         return view ('shop', compact('produk'));
+        
+    }
+    public function cekout (){
+        $produk = Produk::get();
+        return view ('cekout', compact('produk'));
         
     }
 }

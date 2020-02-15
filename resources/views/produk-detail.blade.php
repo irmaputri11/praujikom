@@ -169,19 +169,17 @@
 
                                     <div class="collapse navbar-collapse align-items-start collapse" id="karl-navbar">
                                         <ul class="navbar-nav animated" id="nav">
-                                            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                                            <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
                                             <li class="nav-item dropdown">
                                                 <a class="nav-link dropdown-toggle" href="#" id="karlDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                                                 <div class="dropdown-menu" aria-labelledby="karlDropdown">
-                                                    <a class="dropdown-item" href="index.html">Home</a>
-                                                    <a class="dropdown-item" href="shop.html">Shop</a>
-                                                    <a class="dropdown-item" href="product-details.html">Product Details</a>
-                                                    <a class="dropdown-item" href="cart.html">Cart</a>
-                                                    <a class="dropdown-item" href="checkout.html">Checkout</a>
+                                                    <a class="dropdown-item" href="/">Home</a>
+                                                    <a class="dropdown-item" href="shop">Shop</a>
+                                                    <a class="dropdown-item" href="produk-detail">Product Details</a>
+                                                    <a class="dropdown-item" href="cekout">Checkout</a>
                                                 </div>
                                             </li>
-                                            <li class="nav-item"><a class="nav-link" href="#">Dresses</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="#"><span class="karl-level">hot</span> Shoes</a></li>
+
                                             <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
                                         </ul>
                                     </div>
@@ -222,7 +220,7 @@
                 <div class="row">
                     <div class="col-12">
                         <ol class="breadcrumb d-flex align-items-center">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
                             <li class="breadcrumb-item"><a href="#">Dresses</a></li>
                             <li class="breadcrumb-item active">Long Dress</li>
                         </ol>
@@ -242,7 +240,7 @@
                     <div class="col-12 col-md-6">
                         <div class="single_product_thumb">
                             <div id="product_details_slider" class="carousel slide" data-ride="carousel">
-
+<!-- 
                                 <ol class="carousel-indicators">
                                     <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url({{ asset('assets/karl/img/product-img/product-9.jpg')}});">
                                     </li>
@@ -252,64 +250,30 @@
                                     </li>
                                     <li data-target="#product_details_slider" data-slide-to="3" style="background-image: url({{ asset('assets/karl/img/product-img/product-4.jpg')}});">
                                     </li>
-                                </ol>
+                                </ol> -->
 
                                 <div class="carousel-inner">
+                                @foreach ($produk as $data)
                                     <div class="carousel-item active">
                                         <a class="gallery_img" href="img/product-img/product-9.jpg">
-                                        <img class="d-block w-100" src="{{ asset('assets/karl/img/product-img/product-9.jpg')}}" alt="First slide">
-                                    </a>
+                                        <img class="d-block w-100" src="{{ asset('assets/img/produk/'.$data->foto) }}   " alt="First slide">
+                                        </a>
                                     </div>
-                                    <div class="carousel-item">
-                                        <a class="gallery_img" href="img/product-img/product-2.jpg">
-                                        <img class="d-block w-100" src="{{ asset('assets/karl/img/product-img/product-2.jpg')}}" alt="Second slide">
-                                    </a>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <a class="gallery_img" href="img/product-img/product-3.jpg">
-                                        <img class="d-block w-100" src="{{ asset('assets/karl/img/product-img/product-3.jpg')}}" alt="Third slide">
-                                    </a>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <a class="gallery_img" href="img/product-img/product-4.jpg">
-                                        <img class="d-block w-100" src="{{ asset('assets/karl/img/product-img/product-4.jpg')}}" alt="Fourth slide">
-                                    </a>
-                                    </div>
+                                @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    @foreach ($produk as $data)
                     <div class="col-12 col-md-6">
                         <div class="single_product_desc">
 
-                            <h4 class="title"><a href="#">Long Yellow Dress</a></h4>
+                            <h4 class="title"><a href="#">{{$data->nama_produk}}</a></h4>
 
-                            <h4 class="price">$ 39.99</h4>
+                            <h4 class="price">Rp {{$data->harga}}</h4>
 
                             <p class="available">Available: <span class="text-muted">In Stock</span></p>
-
-                            <div class="single_product_ratings mb-15">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                            </div>
-
-                            <div class="widget size mb-50">
-                                <h6 class="widget-title">Size</h6>
-                                <div class="widget-desc">
-                                    <ul>
-                                        <li><a href="#">32</a></li>
-                                        <li><a href="#">34</a></li>
-                                        <li><a href="#">36</a></li>
-                                        <li><a href="#">38</a></li>
-                                        <li><a href="#">40</a></li>
-                                        <li><a href="#">42</a></li>
-                                    </ul>
-                                </div>
-                            </div>
 
                             <!-- Add to Cart Form -->
                             <form class="cart clearfix mb-50 d-flex" method="post">
@@ -331,25 +295,10 @@
 
                                     <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                                         <div class="card-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra tempor so dales. Phasellus sagittis auctor gravida. Integ er bibendum sodales arcu id te mpus. Ut consectetur lacus.</p>
-                                            <p>Approx length 66cm/26" (Based on a UK size 8 sample) Mixed fibres</p>
-                                            <p>The Model wears a UK size 8/ EU size 36/ US size 4 and her height is 5'8"</p>
+                                            <p>{!!$data->deskripsi!!}</p>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header" role="tab" id="headingTwo">
-                                        <h6 class="mb-0">
-                                            <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Cart Details</a>
-                                        </h6>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
-                                        <div class="card-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo quis in veritatis officia inventore, tempore provident dignissimos nemo, nulla quaerat. Quibusdam non, eos, voluptatem reprehenderit hic nam! Laboriosam, sapiente! Praesentium.</p>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia magnam laborum eaque.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                </div>  
                                 <div class="card">
                                     <div class="card-header" role="tab" id="headingThree">
                                         <h6 class="mb-0">
@@ -367,6 +316,7 @@
 
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </section>
