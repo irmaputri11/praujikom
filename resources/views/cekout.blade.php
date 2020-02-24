@@ -20,7 +20,7 @@
 
     <!-- Responsive CSS -->
     <link href="{{ asset('assets/karl/css/responsive.css')}}" rel="stylesheet">
-
+    <!--  -->
 </head>
 
 <body>
