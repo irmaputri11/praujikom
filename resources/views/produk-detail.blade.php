@@ -196,23 +196,6 @@
         </header>
         <!-- ****** Header Area End ****** -->
 
-        <section class="top-discount-area d-md-flex align-items-center">
-            <!-- Single Discount Area -->
-            <div class="single-discount-area">
-                <h5>Free Shipping &amp; Returns</h5>
-                <h6><a href="#">BUY NOW</a></h6>
-            </div>
-            <!-- Single Discount Area -->
-            <div class="single-discount-area">
-                <h5>20% Discount for all dresses</h5>
-                <h6>USE CODE: Colorlib</h6>
-            </div>
-            <!-- Single Discount Area -->
-            <div class="single-discount-area">
-                <h5>20% Discount for students</h5>
-                <h6>USE CODE: Colorlib</h6>
-            </div>
-        </section>
 
         <!-- <<<<<<<<<<<<<<<<<<<< Breadcumb Area Start <<<<<<<<<<<<<<<<<<<< -->
         <div class="breadcumb_area">
@@ -221,7 +204,6 @@
                     <div class="col-12">
                         <ol class="breadcrumb d-flex align-items-center">
                             <li class="breadcrumb-item"><a href="/">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Dresses</a></li>
                             <li class="breadcrumb-item active">Long Dress</li>
                         </ol>
                         <!-- btn -->
@@ -240,7 +222,7 @@
                     <div class="col-12 col-md-6">
                         <div class="single_product_thumb">
                             <div id="product_details_slider" class="carousel slide" data-ride="carousel">
-<!-- 
+<!--
                                 <ol class="carousel-indicators">
                                     <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url({{ asset('assets/karl/img/product-img/product-9.jpg')}});">
                                     </li>
@@ -253,25 +235,25 @@
                                 </ol> -->
 
                                 <div class="carousel-inner">
-                                @foreach ($produk as $data)
+                                {{-- @foreach ($produk as $data) --}}
                                     <div class="carousel-item active">
                                         <a class="gallery_img" href="img/product-img/product-9.jpg">
-                                        <img class="d-block w-100" src="{{ asset('assets/img/produk/'.$data->foto) }}   " alt="First slide">
+                                        <img class="d-block w-100" src="{{ asset('assets/img/produk/'.$produk->foto) }}" alt="First slide">
                                         </a>
                                     </div>
-                                @endforeach
+                                {{-- @endforeach --}}
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    @foreach ($produk as $data)
+                    {{-- @foreach ($produk as $data) --}}
                     <div class="col-12 col-md-6">
                         <div class="single_product_desc">
 
-                            <h4 class="title"><a href="#">{{$data->nama_produk}}</a></h4>
+                            <h4 class="title"><a href="#">{{$produk->nama_produk}}</a></h4>
 
-                            <h4 class="price">Rp {{$data->harga}}</h4>
+                            <h4 class="price">Rp {{$produk->harga}}</h4>
 
                             <p class="available">Available: <span class="text-muted">In Stock</span></p>
 
@@ -295,15 +277,15 @@
 
                                     <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                                         <div class="card-body">
-                                            <p>{!!$data->deskripsi!!}</p>
+                                            <p>{!!$produk->deskripsi!!}</p>
                                         </div>
                                     </div>
-                                </div>  
+                                </div>
                                 <div class="card">
                                     <div class="card-header" role="tab" id="headingThree">
-                                        <h6 class="mb-0">
+                                        {{-- <h6 class="mb-0">
                                             <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">shipping &amp; Returns</a>
-                                        </h6>
+                                        </h6> --}}
                                     </div>
                                     <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
                                         <div class="card-body">
@@ -316,7 +298,7 @@
 
                         </div>
                     </div>
-                    @endforeach
+                    {{-- @endforeach --}}
                 </div>
             </div>
         </section>
@@ -396,7 +378,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="section_heading text-center">
-                            <h2>related Products</h2>
+
                         </div>
                     </div>
                 </div>

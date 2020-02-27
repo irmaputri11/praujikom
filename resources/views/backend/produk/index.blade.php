@@ -229,29 +229,29 @@ The above copyright notice and this permission notice shall be included in all c
                                         name="nama_produk" id="" required>
                                     </div>
 
-                      
+
                                     <div class="form-group">
                                         <label for="">stok</label>
                                         <input class="form-control" type="text"
                                         name="stok" id="" required>
-                                       
+
                                     </div>
                                     <div class="form-group">
                                         <label for="">harga</label>
                                         <input class="form-control" type="text"
                                         name="harga" id="" required>
-                                        
+
                                     </div>
                                     <div class="form-group">
                                         <label for="">deskripsi</label>
                                         <textarea name="deskripsi" id="ck" cols="30" rows="10"></textarea>
-                                        
+
                                     </div>
                                     <div class="form-group">
                                         <label for="">Foto</label>
                                         <input class="form-control" type="file"
                                         name="foto" id="" required>
-                                       
+
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-outline-info btn-rounded btn-block">
@@ -276,7 +276,7 @@ The above copyright notice and this permission notice shall be included in all c
             <th>id produk</th>
           <th>kode produk</th>
           <th>nama produk</th>
-          
+            <th>slug</th>
           <th>stok</th>
           <th>harga</th>
           <th>deskripsi</th>
@@ -291,6 +291,7 @@ The above copyright notice and this permission notice shall be included in all c
                         <td>{{$no++}}</td>
                         <td>{{$data->kd_produk}}</td>
                         <td>{{$data->nama_produk}}</td>
+                        <td>{{$data->slug}}</td>
                         <td>{{$data->stok}}</td>
                         <td>{{$data->harga}}</td>
                         <td>{!!$data->deskripsi!!}</td>

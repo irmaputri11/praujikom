@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Produk;
 
-class frontend extends Controller
+class CardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,49 +13,8 @@ class frontend extends Controller
      */
     public function index()
     {
-        return view('index');
-    }
-
-    public function shop()
-    {
-        return view('shop');
-    }
-
-    public function produk_detail (){
-        $produk = Produk::get();
-        return view ('produk-detail', compact('produk'));
 
     }
-
-    public function show($slug)
-    {
-        $produk = Produk::where('slug', $slug)->first();
-        return view('produk-detail', compact('produk'));
-    }
-
-    public function admin()
-    {
-        return view('admin');
-    }
-
-    public function contact()
-    {
-        return view('contact');
-    }
-    public function cekout()
-    {
-        return view('cekout');
-    }
-
-    public function card()
-    {
-        return view('card');
-    }
-
-    // public function produk_detail()
-    // {
-    //     $produk = Produk::orderBy('created_at','DESC');
-    // }
 
     /**
      * Show the form for creating a new resource.
@@ -85,7 +43,10 @@ class frontend extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
+    public function show($id)
+    {
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.

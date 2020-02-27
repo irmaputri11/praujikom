@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use App\Produk;
 use File;
 use Session;
+use Str;
+
 class produkcontroller extends Controller
 {
     /**
@@ -52,6 +53,7 @@ class produkcontroller extends Controller
         $produk = new Produk();
         $produk->kd_produk = $request->kd_produk;
         $produk->nama_produk = $request->nama_produk;
+        $produk->slug = Str::slug($request->nama_produk,'_');
         $produk->stok = $request->stok;
         $produk->harga = $request->harga;
         $produk->deskripsi = $request->deskripsi;

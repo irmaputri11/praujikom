@@ -197,23 +197,7 @@
         <!-- ****** Header Area End ****** -->
 
         <!-- ****** Top Discount Area Start ****** -->
-        <section class="top-discount-area d-md-flex align-items-center">
-            <!-- Single Discount Area -->
-            <div class="single-discount-area">
-                <h5>Free Shipping &amp; Returns</h5>
-                <h6><a href="#">BUY NOW</a></h6>
-            </div>
-            <!-- Single Discount Area -->
-            <div class="single-discount-area">
-                <h5>20% Discount for all dresses</h5>
-                <h6>USE CODE: Colorlib</h6>
-            </div>
-            <!-- Single Discount Area -->
-            <div class="single-discount-area">
-                <h5>20% Discount for students</h5>
-                <h6>USE CODE: Colorlib</h6>
-            </div>
-        </section>
+
         <!-- ****** Top Discount Area End ****** -->
 
         <!-- ****** Welcome Slides Area Start ****** -->
@@ -268,140 +252,12 @@
         </section>
         <!-- ****** Welcome Slides Area End ****** -->
 
-     
+
         <!-- ****** Top Catagory Area End ****** -->
 
         <!-- ****** Quick View Modal Area Start ****** -->
-        <!-- @php $i=1; @endphp
-        @for($i=1; $i<=3; $i++) -->
-        <div class="modal fade" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickview" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                @foreach ($produk as $data)
-                    <div class="modal-body">
-                        <div class="quickview_body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-12 col-lg-5">
-                                        <div class="quickview_pro_img">
-                                            <img src="{{ asset('assets/img/produk/'.$data->foto) }}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-lg-7">
-                                        <div class="quickview_pro_des">
-                                            <h4 class="title">{{$data->nama_produk}}</h4>
-                                            <div class="top_seller_product_rating mb-15">
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </div>
-                                            <h5 class="price">Rp {{$data->harga}}<span>Rp 8000</span></h5>
-                                            <p>{!!$data->deskripsi!!}</p>
-                                            <a href="#">View Full Product Details</a>
-                                        </div>
-                                        <!-- Add to Cart Form -->
-                                        <form class="cart" method="post">
-                                            <div class="quantity">
-                                                <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
 
-                                                <input type="number" class="qty-text" id="qty" step="1" min="1" max="12" name="quantity" value="1">
 
-                                                <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                            </div>
-                                            <button type="submit" name="addtocart" value="5" class="cart-submit">Add to cart</button>
-                                            <!-- Wishlist -->
-                                          
-                                            
-                                        </form>
-
-                                        <div class="share_wf mt-30">
-                                            <p>Share With Friend</p>
-                                            <div class="_icon">
-                                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="quickview2" tabindex="-2" role="dialog" aria-labelledby="quickview" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                @foreach ($produk as $data)
-                    <div class="modal-body">
-                        <div class="quickview_body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-12 col-lg-5">
-                                        <div class="quickview_pro_img">
-                                            <img src="{{ asset('assets/img/produk/'.$data->foto) }}" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-lg-7">
-                                        <div class="quickview_pro_des">
-                                            <h4 class="title">{{$data->nama_produk}}</h4>
-                                            <div class="top_seller_product_rating mb-15">
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                                <i class="fa fa-star" aria-hidden="true"></i>
-                                            </div>
-                                            <h5 class="price">Rp {{$data->harga}}<span>Rp 8000</span></h5>
-                                            <p>{!!$data->deskripsi!!}</p>
-                                            <a href="produk-detail">View Full Product Details</a>
-
-                                        </div>
-                                        <!-- Add to Cart Form -->
-                                        <form class="cart" method="post">
-                                            <div class="quantity">
-                                                <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
-
-                                                <input type="number" class="qty-text" id="qty" step="1" min="1" max="12" name="quantity" value="1">
-
-                                                <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                            </div>
-                                            <button type="submit" name="addtocart" value="5" class="cart-submit">Add to cart</button>
-                                            <!-- Wishlist -->
-                                          
-                                            
-                                        </form>
-
-                                        <div class="share_wf mt-30">
-                                            <p>Share With Friend</p>
-                                            <div class="_icon">
-                                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-                                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-                </div>
-            </div>
-        </div>
-        <!-- @endfor -->
         <!-- ****** Quick View Modal Area End ****** -->
 
         <!-- ****** New Arrivals Area Start ****** -->
@@ -437,22 +293,27 @@ $i = 0.1;
     <div class="product-img">
         <img src="{{ asset('assets/img/produk/'.$data->foto) }}" alt="">
         <div class="product-quicview">
-            <a href="#" data-toggle="modal" data-target="#quickview" data-target='#$data->foto'><i class="ti-plus"></i></a>
+        <a href="#" data-toggle="modal" data-target="#produk-{{$data->id}}" data-target='#$data->foto'><i class="ti-plus"></i></a>
         </div>
     </div>
     <div class="product-description">
-        <h4 class="product-price">Rp {{$data->harga}}</h4>
-        <p>{{$data->nama_produk}}</p>
+        <h4>
+        <a href="{{url('/produk-detail/' .$data->slug)}}">
+                {{ $data->nama_produk  }}
+            </a>
+        </h4>
+        <p>Rp {{$data->harga}}</p>
         <a href="card" class="add-to-cart-btn">ADD TO CART</a>
     </div>
 </div>
+@include('modal')
 @endforeach
 </div>
             </div>
         </section>
         <!-- ****** New Arrivals Area End ****** -->
 
-        
+
         <!-- ****** Popular Brands Area Start ****** -->
         <section class="karl-testimonials-area section_padding_100">
             <div class="container">
@@ -595,7 +456,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- /.wrapper end -->
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
-    
+
     <script src="{{ asset('assets/karl/js/jquery/jquery-2.2.4.min.js')}}"></script>
     <script src="{{asset('js/produk.js')}}"></script>
     <!-- Popper js -->
@@ -606,7 +467,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{ asset('assets/karl/js/plugins.js')}}"></script>
     <!-- Active js -->
     <script src="{{ asset('assets/karl/js/active.js')}}"></script>
-  
+
 </body>
 
 </html>
